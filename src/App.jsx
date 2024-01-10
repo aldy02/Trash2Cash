@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Login from './pages/login'
 import TrashPickup from './pages/TrashPickup'
 import Navigation from './components/Navigation'
+import TrashPickupValidation from './pages/TrashPickupValidation'
 
 function App() {
 
@@ -11,7 +12,11 @@ function App() {
       <Routes>
         <Route path="/" element={<div>test</div>} />
         <Route path="/login" element={<Login />} />
-        <Route path="/pickup" element={<TrashPickup />} />
+        {/* <Route path="/pickup" element={<TrashPickup />} /> */}
+        <Route path="pickup">
+          <Route index element={<TrashPickup />} />
+          <Route path=":bankId" element={<TrashPickupValidation />} />
+        </Route>
       </Routes>
     </div>
   )

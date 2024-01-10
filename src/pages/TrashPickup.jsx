@@ -16,9 +16,9 @@ import axios from 'axios';
 import BankCard from '../components/BankCard';
 
 const steps = [
-  { title: 'First', description: 'Contact Info' },
-  { title: 'Second', description: 'Date & Time' },
-  { title: 'Third', description: 'Select Rooms' },
+  { title: 'Choose Trash Bank'},
+  { title: 'Trash Validation'},
+  { title: 'Confirmation of Retrieval'},
 ]
 
 const TrashPickup = () => {
@@ -67,7 +67,6 @@ const TrashPickup = () => {
 
                 <Box flexShrink='0'>
                   <StepTitle>{step.title}</StepTitle>
-                  <StepDescription>{step.description}</StepDescription>
                 </Box>
 
                 <StepSeparator />
@@ -78,7 +77,7 @@ const TrashPickup = () => {
         {/* Stepper End */}
 
         {/* Input Search */}
-        <div className='flex items-center justify-center flex-col w-full mt-14'>
+        <div className='flex items-center justify-center flex-col w-full mt-[58px]'>
           <div className="relative w-2/3">
             <input
               type="text"
@@ -117,6 +116,7 @@ const TrashPickup = () => {
               openHour={trashBankData.open_hour}
               closeHour={trashBankData.close_hour}
               distance={trashBankData.distance}
+              bankId={trashBankData.id}
             />
           ))}
         </div>

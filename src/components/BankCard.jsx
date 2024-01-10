@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
-const BankCard = ({ bankName, openHour, closeHour, distance }) => {
+const BankCard = ({ bankName, openHour, closeHour, distance, bankId }) => {
     const currentTime = new Date();
 
     const openHourArray = openHour.split(':');
@@ -32,9 +33,11 @@ const BankCard = ({ bankName, openHour, closeHour, distance }) => {
                 per inceptos himenaeos.
             </p>
             {isButtonVisible && (
-                <button className="bg-[#FFB534] text-[#FBF6EE] w-full py-2 mt-5 rounded-lg font-semibold hover:bg-[#EFA42B] transition duration-300">
-                   NEXT
-                </button>
+                <Link to={`/pickup/${bankId}`}>
+                    <button className="bg-[#FFB534] text-[#FBF6EE] w-full py-2 mt-5 rounded-lg font-semibold hover:bg-[#EFA42B] transition duration-300">
+                        SELANJUTNYA
+                    </button>
+                </Link>
             )}
         </div>
     );
