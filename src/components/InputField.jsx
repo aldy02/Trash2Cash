@@ -14,6 +14,8 @@ import {
 
 const InputField = ({
   type,
+  label,
+  name,
   value,
   onChange,
   error,
@@ -22,14 +24,18 @@ const InputField = ({
   placeholder,
 }) => {
   return (
-    <FormControl isInvalid={error} mb="4">
-      <FormLabel>{_.capitalize(type)}</FormLabel>
+    <FormControl isInvalid={error} mb="2">
+      <FormLabel>
+        {_.words(label || type)
+          .map(_.capitalize)
+          .join(' ')}
+      </FormLabel>
       <InputGroup size="md">
         <Input
           pr="4.5rem"
           onChange={onChange}
           type={type}
-          name={type}
+          name={name || type}
           focusBorderColor="secondary-light"
           value={value}
           placeholder={placeholder || type}

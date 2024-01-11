@@ -9,9 +9,9 @@ const AuthCard = ({ children, authType }) => {
   };
   return (
     <div className="auth-container h-screen flex flex-col justify-center">
-      <div className="p-8 flex flex-col justify-center content-center h-fit rounded-md shadow-md w-96 border border-neutral-500">
+      <div className="px-8 py-4 flex flex-col justify-center content-center h-fit rounded-md shadow-md w-96 border border-neutral-500">
         <h1 className="font-bold text-center text-3xl">{authContent.header}</h1>
-        <div className="flex w-fit mx-auto mb-8">
+        <div className="flex w-fit mx-auto mb-4">
           <p className="text-center">{authContent.subHeader}</p>
           <a
             className="ml-2 text-secondary-dark font-medium"
