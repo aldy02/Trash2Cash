@@ -1,38 +1,28 @@
 import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import { app } from '../utils/firebase-config';
 const useSignUp = () => {
+  const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
-  const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const register = async (email, password) => {
-    setIsLoading(true);
-    const auth = getAuth();
+  const handleSignUp = async (email, password) => {
+    setLoading(true);
+    const auth = getAuth(app);
     createUserWithEmailAndPassword(auth, email, password)
+      // eslint-disable-next-line no-unused-vars
       .then((userCredential) => {
-        // Signed up
-        const user = userCredential.user;
-        setUser(user);
+        setSuccess(true);
       })
       .catch((error) => {
         setError(error);
-        // ..
       })
       .finally(() => {
-        setIsLoading(false);
+        setLoading(false);
       });
-    // try {
-    //   // Panggil fungsi registrasi dari Firebase
-    //   await getAuth.createUserWithEmailAndPassword(email, password);
-    //   setError(null); // Bersihkan error jika registrasi berhasil
-    // } catch (error) {
-    //   setError(error.message); // Tangkap pesan error jika registrasi gagal
-    // } finally {
-    //   setIsLoading(false);
-    // }
   };
 
-  return { register, error, isLoading, user };
+  return { handleSignUp, error, success, loading };
 };
 
 export default useSignUp;

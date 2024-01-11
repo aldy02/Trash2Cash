@@ -46,7 +46,7 @@ const SignIn = () => {
   return (
     <>
       <div className="main-container flex h-screen justify-center">
-        <AuthCard authType={'sign-n'}>
+        <AuthCard authType={'sign-in'}>
           <form onSubmit={formik.handleSubmit}>
             <Button w={'full'}>
               <img src={GoogleIcon} alt="" />

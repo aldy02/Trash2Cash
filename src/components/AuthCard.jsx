@@ -1,6 +1,6 @@
 // eslint-disable-next-line react/prop-types
 const AuthCard = ({ children, authType }) => {
-  const isLogin = authType === 'sign-in';
+  const isLogin = authType == 'sign-in';
   const authContent = {
     header: isLogin ? 'Sign In to Trash2Cash' : 'Create Account',
     subHeader: isLogin ? "Don't have an account?" : 'Already have an account?',

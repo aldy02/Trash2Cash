@@ -1,21 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import GoogleIcon from '../assets/GoogleIcon.svg';
-// import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import Swal from 'sweetalert2';
 import * as yup from 'yup';
 import { Button, Box, Divider, AbsoluteCenter } from '@chakra-ui/react';
 import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
+import useSignUp from '../hooks/useSignUp';
 const SignUp = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleShowConfirmPassword = () =>
     setShowConfirmPassword(!showConfirmPassword);
-  const registerUser = () => {
-    alert('Submit form!');
+
+  const { handleSignUp, error, success, loading } = useSignUp();
+  const registerUser = (values) => {
+    const { email, password } = values;
+    handleSignUp(email, password);
   };
 
   const formik = useFormik({
@@ -55,6 +60,29 @@ const SignUp = () => {
     formik.setFieldValue(target.name, target.value);
     formik.setFieldTouched(target.name, true, false);
   };
+
+  useEffect(() => {
+    if (success) {
+      Swal.fire({
+        title: 'Your account has been created, please sign in',
+        icon: 'success',
+        showConfirmButton: true,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/sign-in');
+        }
+      });
+    }
+  }, [success]);
+
+  useEffect(() => {
+    if (error) {
+      Swal.fire({
+        title: error.message,
+        icon: 'error',
+      });
+    }
+  }, [error]);
 
   return (
     <>
@@ -103,6 +131,7 @@ const SignUp = () => {
               onShowPassword={handleShowConfirmPassword}
             />
             <Button
+              isLoading={loading}
               mt={'4'}
               type="submit"
               bg="primary"
