@@ -1,20 +1,19 @@
-import { Routes, Route } from 'react-router-dom'
-import Login from './pages/login'
-import TrashPickup from './pages/TrashPickup'
-import Navigation from './components/Navigation'
+import { Routes, Route } from 'react-router-dom';
+import TrashPickup from './pages/TrashPickup';
+import SignIn from './pages/SignIn';
+// import Navigation from './components/Navigation'
 
 function App() {
-
   return (
-    <div className='App'>
+    <div className="App">
       {/* <Navigation /> */}
       <Routes>
         <Route path="/" element={<div>test</div>} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/sign-in" element={<SignIn />} />
         <Route path="/pickup" element={<TrashPickup />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

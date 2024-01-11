@@ -8,7 +8,7 @@ import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
 
-const Login = () => {
+const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   const registerUser = () => {
@@ -84,4 +84,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;
