@@ -6,14 +6,14 @@ import TrashPickupValidation from './pages/TrashPickupValidation'
 import TrashPickupConfirmation from './pages/TrashPickupConfirmation'
 import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
-
+import AddProduct from './pages/AddProduct'
 function App() {
 
   return (
     <div className='App'>
       <Navigation />
       <Routes>
-        <Route path="/" element={<div>test</div>} />
+        <Route path="/" element={<AddProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="pickup">
           <Route index element={<TrashPickup />} />
