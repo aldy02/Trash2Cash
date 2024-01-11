@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-const useFirebaseRegister = () => {
+const useSignUp = () => {
   const [error, setError] = useState(null);
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,4 +35,4 @@ const useFirebaseRegister = () => {
   return { register, error, isLoading, user };
 };
 
-export default useFirebaseRegister;
+export default useSignUp;
