@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import GoogleIcon from '../assets/GoogleIcon.svg';
 // import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import { Button } from '@chakra-ui/react';
+import { Button, Box, Divider, AbsoluteCenter } from '@chakra-ui/react';
 import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
@@ -44,9 +45,21 @@ const SignIn = () => {
 
   return (
     <>
-      <div className="main-container flex h-screen  justify-center">
+      <div className="main-container flex h-screen justify-center">
         <AuthCard authType={'login'}>
           <form onSubmit={formik.handleSubmit}>
+            <Button w={'full'}>
+              <img src={GoogleIcon} alt="" />
+              <span className="ml-3 text-neutral text-xs">
+                Sign In With Google
+              </span>
+            </Button>
+            <Box position="relative" py="5">
+              <Divider />
+              <AbsoluteCenter fontSize={'xs'} bg="white">
+                Or Sign In With
+              </AbsoluteCenter>
+            </Box>
             {/* 📧 INPUT EMAIL */}
             <InputField
               type={'email'}
@@ -69,6 +82,7 @@ const SignIn = () => {
             <Button
               type="submit"
               bg="primary"
+              mt={8}
               textColor="white"
               _hover={{ bg: 'primary-dark' }}
               _active={{ bg: 'primary-dark' }}
