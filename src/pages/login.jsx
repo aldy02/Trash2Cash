@@ -1,25 +1,16 @@
 import { useState } from 'react';
-import VisibilityIcon from '../assets/VisibilityIcon.svg';
-import VisibilityOffIcon from '../assets/VisibilityOffIcon.svg';
 // import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
-import {
-  FormControl,
-  Input,
-  InputGroup,
-  InputRightElement,
-  FormErrorMessage,
-  FormLabel,
-  Button,
-} from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
+import InputField from '../components/InputField';
 
 const Login = () => {
-  const [show, setShow] = useState(false);
-  const handleShowPassword = () => setShow(!show);
+  const [showPassword, setShowPassword] = useState(false);
+  const handleShowPassword = () => setShowPassword(!showPassword);
   const registerUser = () => {
     alert('Submit form!');
   };
@@ -45,7 +36,7 @@ const Login = () => {
     }),
   });
 
-  const handleForm = (event) => {
+  const handleInputOnChange = (event) => {
     const { target } = event;
     formik.setFieldValue(target.name, target.value);
     formik.setFieldTouched(target.name, true, false);
@@ -57,56 +48,24 @@ const Login = () => {
         <AuthCard authType={'login'}>
           <form onSubmit={formik.handleSubmit}>
             {/* 📧 INPUT EMAIL */}
-            <FormControl
-              isInvalid={formik.touched.email && formik.errors.email}
-              id="email"
-              mb="4"
-            >
-              <FormLabel>Email</FormLabel>
-              <Input
-                onChange={handleForm}
-                type="email"
-                name="email"
-                focusBorderColor="secondary-light"
-              />
-              <FormErrorMessage fontSize={'xs'}>
-                {formik.touched.email && formik.errors.email}
-              </FormErrorMessage>
-            </FormControl>
-
+            <InputField
+              type={'email'}
+              label={'email'}
+              name={'email'}
+              onChange={handleInputOnChange}
+              error={formik.touched.email && formik.errors.email}
+              placeholder={'example@mail.com'}
+            />
             {/* 🔐 INPUT PASSWORD */}
-            <FormControl
-              isInvalid={formik.touched.password && formik.errors.password}
-              id="password"
-              mb="4"
-            >
-              <FormLabel>Password</FormLabel>
-              <InputGroup size="md">
-                <Input
-                  onChange={handleForm}
-                  pr="4.5rem"
-                  name="password"
-                  type={show ? 'text' : 'password'}
-                />
-                <InputRightElement width="4rem">
-                  <Button
-                    h="1.75rem"
-                    size="sm"
-                    background={'none'}
-                    onClick={handleShowPassword}
-                  >
-                    {show ? (
-                      <img src={VisibilityOffIcon} alt="hide" />
-                    ) : (
-                      <img src={VisibilityIcon} alt="show" />
-                    )}
-                  </Button>
-                </InputRightElement>
-              </InputGroup>
-              <FormErrorMessage fontSize="xs">
-                {formik.touched.password && formik.errors.password}
-              </FormErrorMessage>
-            </FormControl>
+            <InputField
+              type={'password'}
+              label={'password'}
+              name={'password'}
+              onChange={handleInputOnChange}
+              error={formik.touched.password && formik.errors.password}
+              showPassword={showPassword}
+              onShowPassword={handleShowPassword}
+            />
             <Button
               type="submit"
               bg="primary"
