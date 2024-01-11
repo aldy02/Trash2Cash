@@ -3,6 +3,7 @@ import Login from './pages/login'
 import TrashPickup from './pages/TrashPickup'
 import Navigation from './components/Navigation'
 import TrashPickupValidation from './pages/TrashPickupValidation'
+import TrashPickupConfirmation from './pages/TrashPickupConfirmation'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="pickup">
           <Route index element={<TrashPickup />} />
           <Route path=":bankId" element={<TrashPickupValidation />} />
+          <Route path=":bankId/confirmation" element={<TrashPickupConfirmation />} />
         </Route>
       </Routes>
     </div>

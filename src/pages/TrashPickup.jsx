@@ -16,9 +16,9 @@ import axios from 'axios';
 import BankCard from '../components/BankCard';
 
 const steps = [
-  { title: 'Choose Trash Bank'},
-  { title: 'Trash Validation'},
-  { title: 'Confirmation of Retrieval'},
+  { title: 'Choose Trash Bank' },
+  { title: 'Trash Validation' },
+  { title: 'Confirmation of Retrieval' },
 ]
 
 const TrashPickup = () => {
@@ -109,7 +109,7 @@ const TrashPickup = () => {
         </div>
 
         {/* Bank List Started */}
-        <div className='w-full grid grid-cols-3 gap-y-8 mt-16'>
+        <div className='w-full grid grid-cols-3 gap-y-8 gap-x-9 mt-16'>
           {trashBankDatas.map((trashBankData) => (
             <BankCard key={trashBankData.id}
               bankName={trashBankData.title}

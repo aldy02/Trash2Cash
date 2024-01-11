@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react'
 import React, { useState } from 'react';
 import TrashIcon from '../assets/TrashIcon.svg'
+import { Link, useParams } from "react-router-dom";
 
 const steps = [
     { title: 'Choose Trash Bank' },
@@ -21,6 +22,7 @@ const steps = [
 ]
 
 const TrashPickupValidation = () => {
+    const { bankId } = useParams();
     const { activeStep } = useSteps({
         index: 2,
         count: steps.length,
@@ -127,9 +129,11 @@ const TrashPickupValidation = () => {
                         </p>
                     </div>
                 </div>
-                <button className='bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10' onClick={handleConfirmClick}>
-                    CONFIRM
-                </button>
+                <Link to={`/pickup/${bankId}/confirmation`}>
+                    <button className='bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10'>
+                        CONFIRM
+                    </button>
+                </Link>
             </div>
         </div>
     );
