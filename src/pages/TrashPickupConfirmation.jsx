@@ -34,9 +34,9 @@ const TrashPickupConfirmation = () => {
 
 
     const [currentStep, setCurrentStep] = useState(1);
-    
+
     const handleStepClick = (index) => {
-        setCurrentStep(index+1);
+        setCurrentStep(index + 1);
     };
     const { activeStep } = useSteps({
         index: currentStep,
@@ -46,22 +46,22 @@ const TrashPickupConfirmation = () => {
     const [note, setNote] = useState('');
 
     useEffect(() => {
-      switch (currentStep) {
-        case 1:
-          setNote('Admin is checking your trash');
-          break;
-        case 2:
-          setNote('Admin is planning for trash pickup');
-          break;
-        case 3:
-          setNote('Driver is on the way');
-          break;
-        case 4:
-          setNote('Trash has been received');
-          break;
-        default:
-          setNote('');
-      }
+        switch (currentStep) {
+            case 1:
+                setNote('Admin is checking your trash');
+                break;
+            case 2:
+                setNote('Admin is planning for trash pickup');
+                break;
+            case 3:
+                setNote('Driver is on the way');
+                break;
+            case 4:
+                setNote('Trash has been received');
+                break;
+            default:
+                setNote('');
+        }
     }, [currentStep]);
 
     return (

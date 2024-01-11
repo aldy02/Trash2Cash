@@ -4,6 +4,7 @@ import TrashPickup from './pages/TrashPickup'
 import Navigation from './components/Navigation'
 import TrashPickupValidation from './pages/TrashPickupValidation'
 import TrashPickupConfirmation from './pages/TrashPickupConfirmation'
+import Product from './pages/Product'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path=":bankId" element={<TrashPickupValidation />} />
           <Route path=":bankId/confirmation" element={<TrashPickupConfirmation />} />
         </Route>
+        <Route path="/product" element={<Product />} />
       </Routes>
     </div>
   )

@@ -3,19 +3,22 @@ import ProfiileIcon from '../assets/ProfileIcon.svg'
 import ArrowIcon from '../assets/ArrowIcon.svg'
 import CartIcon from '../assets/CartIcon.svg'
 import NotificationIcon from '../assets/NotificationIcon.svg'
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     return (
         <div className="navbar flex flex-row justify-between px-8 py-2 border-b-2 border[#B0BEC5]">
             <div className='flex flex-row items-center'>
+                <Link to='/'>
                 <div className="logo-container">
                     <img src={Logo} alt="Trash2Cash Logo" className='w-44' />
                 </div>
+                </Link>
                 <span className="border-l-[3px] h-8 border-[#DEDEDE] ml-5 mr-6"></span>
                 <div className="item-menu font-medium text-xl flex flex-row items-center text-[#455A64]">
-                    <p>Homapage</p>
-                    <p className='mx-4'>Trash Pickup</p>
-                    <p>Product</p>
+                    <Link to='/'><p>Homapage</p></Link>
+                    <Link to='/pickup'><p className='mx-4'>Trash Pickup</p></Link>
+                    <Link to='/product'><p>Product</p></Link>
                 </div>
             </div>
             <div className="profile flex flex-row items-center">
