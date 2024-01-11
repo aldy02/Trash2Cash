@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/ProductCard';
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -24,12 +25,14 @@ const Product = () => {
 
       <div className='w-full my-8 grid grid-cols-3 gap-10 px-8'>
         {products.map((product) => (
-          <ProductCard key={product.id}
-            image={product.image}
-            title={product.title}
-            sold={product.total_sold}
-            price={product.price}
-          />
+          <Link to={`/product/${product.id}`}>
+            <ProductCard key={product.id}
+              image={product.image}
+              title={product.title}
+              sold={product.total_sold}
+              price={product.price}
+            />
+        </Link>
         ))}
       </div>
     </div>
