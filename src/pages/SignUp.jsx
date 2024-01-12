@@ -9,6 +9,7 @@ import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
 import useSignUp from '../hooks/useSignUp';
+import useAuthStatus from '../hooks/useAuthStatus';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -18,6 +19,13 @@ const SignUp = () => {
   const handleShowConfirmPassword = () =>
     setShowConfirmPassword(!showConfirmPassword);
   const { handleSignUp, error, success, loading } = useSignUp();
+  const [isSignedIn] = useAuthStatus();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      navigate('/');
+    }
+  }, [isSignedIn, navigate]);
 
   const registerUser = (values) => {
     const { email, password } = values;

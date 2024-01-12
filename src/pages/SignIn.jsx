@@ -9,12 +9,20 @@ import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
 import useSignIn from '../hooks/useSignIn';
+import useAuthStatus from '../hooks/useAuthStatus';
 
 const SignIn = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
   const { handleSignIn, error, success, loading } = useSignIn();
+  const [isSignedIn] = useAuthStatus();
+
+  useEffect(() => {
+    if (isSignedIn) {
+      navigate('/');
+    }
+  }, [isSignedIn, navigate]);
 
   const registerUser = (values) => {
     const { email, password } = values;
