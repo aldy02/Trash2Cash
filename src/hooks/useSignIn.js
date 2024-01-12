@@ -9,7 +9,6 @@ const useSignIn = () => {
   const handleSignIn = async (email, password) => {
     setLoading(true);
     const auth = getAuth(app);
-    // createUserWithEmailAndPassword(auth, email, password)
     signInWithEmailAndPassword(auth, email, password)
       // eslint-disable-next-line no-unused-vars
       .then((userCredential) => {

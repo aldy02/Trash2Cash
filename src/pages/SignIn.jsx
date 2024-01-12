@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import GoogleIcon from '../assets/GoogleIcon.svg';
-// import axios from 'axios';
-// import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Button, Box, Divider, AbsoluteCenter } from '@chakra-ui/react';
@@ -58,9 +56,9 @@ const SignIn = () => {
         icon: 'success',
         showConfirmButton: true,
       }).then((result) => {
-        // if (result.isConfirmed) {
-        //   navigate('/sign-in');
-        // }
+        if (result.isConfirmed) {
+          navigate('/');
+        }
       });
     }
   }, [success]);

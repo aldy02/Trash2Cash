@@ -9,7 +9,6 @@ const useAuthStatus = () => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        alert('already sign in');
         console.info(user);
         setIsSignedIn(true);
       } else {
