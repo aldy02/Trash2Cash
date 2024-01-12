@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signOut,
+} from 'firebase/auth';
 import { app } from '../config/firebase';
 const useSignUp = () => {
   const [success, setSuccess] = useState(null);
@@ -12,6 +16,7 @@ const useSignUp = () => {
     createUserWithEmailAndPassword(auth, email, password)
       // eslint-disable-next-line no-unused-vars
       .then((userCredential) => {
+        signOut(auth);
         setSuccess(true);
       })
       .catch((error) => {
