@@ -87,7 +87,7 @@ const SignIn = () => {
           <form onSubmit={formik.handleSubmit}>
             <Button w={'full'}>
               <img src={GoogleIcon} alt="" />
-              <span className="ml-3 text-neutral text-xs">
+              <span className="ml-3 text-[#737373] text-xs">
                 Sign In With Google
               </span>
             </Button>
@@ -119,11 +119,11 @@ const SignIn = () => {
             <Button
               isLoading={loading}
               type="submit"
-              bg="primary"
+              bg="#FFB534"
               mt={8}
               textColor="white"
-              _hover={{ bg: 'primary-dark' }}
-              _active={{ bg: 'primary-dark' }}
+              _hover={{ bg: '#F89F04' }}
+              _active={{ bg: '#F89F04k' }}
               w={'full'}
             >
               Sign In

@@ -36,7 +36,7 @@ const InputField = ({
           onChange={onChange}
           type={type}
           name={name || type}
-          focusBorderColor="secondary-light"
+          focusBorderColor="#d4d4d4"
           value={value}
           placeholder={placeholder || type}
         />

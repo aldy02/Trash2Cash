@@ -100,7 +100,7 @@ const SignUp = () => {
         <AuthCard authType={'sign-up'}>
           <Button>
             <img src={GoogleIcon} alt="" />
-            <span className="ml-3 text-neutral text-xs">
+            <span className="ml-3 text-[#737373] text-xs">
               Sign Up With Google
             </span>
           </Button>
@@ -143,10 +143,10 @@ const SignUp = () => {
               isLoading={loading}
               mt={'4'}
               type="submit"
-              bg="primary"
+              bg="#FFB534"
               textColor="white"
-              _hover={{ bg: 'primary-dark' }}
-              _active={{ bg: 'primary-dark' }}
+              _hover={{ bg: '#F89F04' }}
+              _active={{ bg: '#F89F04' }}
               w={'full'}
             >
               Sign Up

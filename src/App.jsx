@@ -2,7 +2,6 @@ import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import { Routes, Route } from 'react-router-dom'
-import Login from './pages/login'
 import TrashPickup from './pages/TrashPickup'
 import Navigation from './components/Navigation'
 import TrashPickupValidation from './pages/TrashPickupValidation'
@@ -16,11 +15,13 @@ import PickupConfirmation from './pages/PickupConfirmation'
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+      </Routes>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/sign-up" element={<SignUp />} />
         <Route path="pickup">
           <Route index element={<TrashPickup />} />
           <Route path=":bankId" element={<TrashPickupValidation />} />

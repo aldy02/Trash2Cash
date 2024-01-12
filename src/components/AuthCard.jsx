@@ -14,7 +14,7 @@ const AuthCard = ({ children, authType }) => {
         <div className="flex w-fit mx-auto mb-4">
           <p className="text-center">{authContent.subHeader}</p>
           <a
-            className="ml-2 text-secondary-dark font-medium"
+            className="ml-2 text-[#65B741] font-medium"
             href={authContent.nextUrl}
           >
             {authContent.nextPage}
