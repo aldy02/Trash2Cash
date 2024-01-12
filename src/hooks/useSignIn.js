@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { app } from '../utils/firebase-config';
-const useSignUp = () => {
+const useSignIn = () => {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleSignUp = async (email, password) => {
+  const handleSignIn = async (email, password) => {
     setLoading(true);
     const auth = getAuth(app);
     // createUserWithEmailAndPassword(auth, email, password)
@@ -23,7 +23,7 @@ const useSignUp = () => {
       });
   };
 
-  return { handleSignUp, error, success, loading };
+  return { handleSignIn, error, success, loading };
 };
 
-export default useSignUp;
+export default useSignIn;
