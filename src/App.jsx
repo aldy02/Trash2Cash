@@ -7,13 +7,14 @@ import TrashPickupConfirmation from './pages/TrashPickupConfirmation'
 import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
 import AddProduct from './pages/AddProduct'
-function App() {
+import ProductList from './pages/ProductList'
 
+function App() {
   return (
     <div className='App'>
       <Navigation />
       <Routes>
-        <Route path="/" element={<AddProduct />} />
+        <Route path="/" element={<div>Homepage</div>} />
         <Route path="/login" element={<Login />} />
         <Route path="pickup">
           <Route index element={<TrashPickup />} />
@@ -23,6 +24,10 @@ function App() {
         <Route path="product">
           <Route index element={<Product />} />
           <Route path=":productId" element={<ProductDetail />} />
+        </Route>
+        <Route path="admin/product">
+          <Route index element={<ProductList />} />
+          <Route path=":productId" element={<AddProduct />} />
         </Route>
       </Routes>
     </div>
