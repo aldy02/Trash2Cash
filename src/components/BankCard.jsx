@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 
-const BankCard = ({ bankName, openHour, closeHour, distance }) => {
+const BankCard = ({ bankName, openHour, closeHour, distance, bankId }) => {
     const currentTime = new Date();
 
     const openHourArray = openHour.split(':');
@@ -20,7 +21,7 @@ const BankCard = ({ bankName, openHour, closeHour, distance }) => {
 
     return (
         <div
-            className={`relative w-[450px] ${isBankOpen ? 'bg-[#f8f7f7] border-[3px] border-[#f8f7f7]' : 'bg-[#f0efef] border-[3px] border-[#f0efef]'} p-8 rounded-2xl hover:border-[3px] hover:border-[#FFB534]`} onMouseEnter={() => setButtonVisibility(true)} onMouseLeave={() => setButtonVisibility(false)}>
+            className={`relative w-[450px] animation2  ${isBankOpen ? 'bg-[#f8f7f7] border-[3px] border-[#f8f7f7]' : 'bg-[#f0efef] border-[3px] border-[#f0efef]'} p-8 w-full rounded-2xl hover:border-[3px] hover:border-[#FFB534]`} onMouseEnter={() => setButtonVisibility(true)} onMouseLeave={() => setButtonVisibility(false)}>
             <h2 className='text-xl font-semibold mb-1'>{bankName}</h2>
             <span className={`rounded-sm text-xs mr-2 px-2 ${isBankOpen ? 'bg-[#DCFFDC] text-[#65B741]' : 'bg-[#FFD4D4] text-[#FF5252]'} font-medium py-1`}>
                 {isBankOpen ? 'Open' : 'Close'}
@@ -32,9 +33,11 @@ const BankCard = ({ bankName, openHour, closeHour, distance }) => {
                 per inceptos himenaeos.
             </p>
             {isButtonVisible && (
-                <button className="bg-[#FFB534] text-[#FBF6EE] w-full py-2 mt-5 rounded-lg font-semibold hover:bg-[#EFA42B] transition duration-300">
-                   NEXT
-                </button>
+                <Link to={`/pickup/${bankId}`}>
+                    <button className="bg-[#FFB534] text-[#FBF6EE] w-full py-2 mt-5 rounded-lg font-semibold hover:bg-[#EFA42B] transition duration-300">
+                        SELANJUTNYA
+                    </button>
+                </Link>
             )}
         </div>
     );

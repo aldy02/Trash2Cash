@@ -1,9 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
-import TrashPickup from './pages/TrashPickup';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
-import Navigation from './components/Navigation';
+import { Routes, Route } from 'react-router-dom'
+import Login from './pages/login'
+import TrashPickup from './pages/TrashPickup'
+import Navigation from './components/Navigation'
+import TrashPickupValidation from './pages/TrashPickupValidation'
+import TrashPickupConfirmation from './pages/TrashPickupConfirmation'
+import Product from './pages/Product'
+import ProductDetail from './pages/ProductDetail'
+import AddProduct from './pages/AddProduct'
+import ProductList from './pages/ProductList'
+import PickupConfirmation from './pages/PickupConfirmation'
 
 function App() {
   return (
@@ -13,7 +21,23 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/pickup" element={<TrashPickup />} />
+        <Route path="pickup">
+          <Route index element={<TrashPickup />} />
+          <Route path=":bankId" element={<TrashPickupValidation />} />
+          <Route path=":bankId/confirmation" element={<TrashPickupConfirmation />} />
+        </Route>
+        <Route path="product">
+          <Route index element={<Product />} />
+          <Route path=":productId" element={<ProductDetail />} />
+        </Route>
+        <Route path="admin/product">
+          <Route index element={<ProductList />} />
+          <Route path=":productId" element={<AddProduct />} />
+        </Route>
+        <Route path="admin/pickup">
+          <Route index element={<PickupConfirmation />} />
+          <Route path=":userID" element={<AddProduct />} />
+        </Route>
       </Routes>
     </div>
   );
