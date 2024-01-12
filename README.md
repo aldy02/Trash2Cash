@@ -26,7 +26,7 @@ Page: `src/pages/Home.jsx`
 
 Homepage that contains the sign out feature. Homepage is still under development so it contains a sign out feature.
 
-![homepage](screenshoot/homePage.png)
+![homepage](screenshoot/Homepage.png)
 
 ### Pickup: `/pickup`
 
