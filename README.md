@@ -1,3 +1,9 @@
+# Team Inspire - Hacfest 2024 Participant
+1. Aldy Rahman - Hacker
+2. Rama Noor Rizki - Hacker
+3. Rifky Fauzan Rusadi - Hustler
+4. M. Alfi Rizki - Hipster
+
 # Trash2Cash Web Application
 
 Trash2Cash is a web-based application with the main feature of PickUp Trash where we provide waste collection services to users. In accordance with our motto "Turn Trash to Cash", we hope to reduce waste by buying waste sold by users.
