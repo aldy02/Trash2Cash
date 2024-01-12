@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import GoogleIcon from '../assets/GoogleIcon.svg';
 // import axios from 'axios';
 // import { useNavigate } from 'react-router-dom';
@@ -8,13 +10,19 @@ import { Button, Box, Divider, AbsoluteCenter } from '@chakra-ui/react';
 import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
+import useSignIn from '../hooks/useSignIn';
 
 const SignIn = () => {
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
-  const registerUser = () => {
-    alert('Submit form!');
+  const { handleSignIn, error, success, loading } = useSignIn();
+
+  const registerUser = (values) => {
+    const { email, password } = values;
+    handleSignIn(email, password);
   };
+
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -42,6 +50,29 @@ const SignIn = () => {
     formik.setFieldValue(target.name, target.value);
     formik.setFieldTouched(target.name, true, false);
   };
+
+  useEffect(() => {
+    if (success) {
+      Swal.fire({
+        title: 'Sign In Success',
+        icon: 'success',
+        showConfirmButton: true,
+      }).then((result) => {
+        // if (result.isConfirmed) {
+        //   navigate('/sign-in');
+        // }
+      });
+    }
+  }, [success]);
+
+  useEffect(() => {
+    if (error) {
+      Swal.fire({
+        title: 'Wrong Email or Password, please Sign In again',
+        icon: 'error',
+      });
+    }
+  }, [error]);
 
   return (
     <>
@@ -80,6 +111,7 @@ const SignIn = () => {
               onShowPassword={handleShowPassword}
             />
             <Button
+              isLoading={loading}
               type="submit"
               bg="primary"
               mt={8}

@@ -16,7 +16,7 @@ const useSignIn = () => {
         setSuccess(true);
       })
       .catch((error) => {
-        setError(error);
+        setError(error.message);
       })
       .finally(() => {
         setLoading(false);

@@ -9,6 +9,7 @@ import AuthCard from '../components/AuthCard';
 import AuthHero from '../components/AuthHero';
 import InputField from '../components/InputField';
 import useSignUp from '../hooks/useSignUp';
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -16,8 +17,8 @@ const SignUp = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const handleShowConfirmPassword = () =>
     setShowConfirmPassword(!showConfirmPassword);
-
   const { handleSignUp, error, success, loading } = useSignUp();
+
   const registerUser = (values) => {
     const { email, password } = values;
     handleSignUp(email, password);
