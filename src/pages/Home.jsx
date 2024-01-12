@@ -4,7 +4,7 @@ import useAuthStatus from '../hooks/useAuthStatus';
 import { useEffect } from 'react';
 import { Button } from '@chakra-ui/react';
 import { getAuth, signOut } from 'firebase/auth';
-import { app } from '../utils/firebase-config';
+import { app } from '../config/firebase';
 
 const Home = () => {
   const navigate = useNavigate();

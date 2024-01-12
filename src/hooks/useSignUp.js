@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-import { app } from '../utils/firebase-config';
+import { app } from '../config/firebase';
 const useSignUp = () => {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
-import { app } from '../utils/firebase-config';
+import { app } from '../config/firebase';
 const useSignIn = () => {
   const [success, setSuccess] = useState(null);
   const [error, setError] = useState(null);
