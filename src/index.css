@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+* {
+  @apply text-neutral-dark;
+}
+
 @keyframes animasi1 {
   from {
     opacity: 0;
