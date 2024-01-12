@@ -34,7 +34,7 @@ const InputField = ({
         <Input
           pr="4.5rem"
           onChange={onChange}
-          type={type}
+          type={type == 'password' ? (showPassword ? 'text' : 'password') : type}
           name={name || type}
           focusBorderColor="#d4d4d4"
           value={value}
