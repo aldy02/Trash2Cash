@@ -16,7 +16,7 @@ const Navigation = () => {
                 </Link>
                 <span className="border-l-[3px] h-8 border-[#DEDEDE] ml-5 mr-6"></span>
                 <div className="item-menu font-medium text-xl flex flex-row items-center text-[#455A64]">
-                    <Link to='/'><p className='hover:text-black'>Homapage</p></Link>
+                    <Link to='/'><p className='hover:text-black'>Homepage</p></Link>
                     <Link to='/pickup'><p className='mx-4 hover:text-black'>Trash Pickup</p></Link>
                     <Link to='/product'><p className='hover:text-black'>Product</p></Link>
                 </div>
