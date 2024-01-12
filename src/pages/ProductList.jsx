@@ -27,7 +27,7 @@ const ProductList = () => {
                 <div className="relative w-full">
                     <input
                         type="text"
-                        placeholder="Choose your nearest trash bank"
+                        placeholder="Search Product"
                         className='w-full py-2 pl-11 rounded-2xl border-2 border-gray-400'
                     />
                     <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">

@@ -14,7 +14,7 @@ const ProductCard = ({ image, title, price, stock, id }) => {
                     <div className="flex">
                         <p className="mr-3 text-[#263238] font-semibold">Rp {price}0</p>
                         <p className="text-[#7B7B7B]">Stock:
-                            <span className="text-[#65B741]">{stock}</span>
+                            <span className="text-[#65B741]"> {stock}</span>
                         </p>
                     </div>
                 </div>

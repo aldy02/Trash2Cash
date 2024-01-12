@@ -8,6 +8,7 @@ import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
 import AddProduct from './pages/AddProduct'
 import ProductList from './pages/ProductList'
+import PickupConfirmation from './pages/PickupConfirmation'
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
         <Route path="admin/product">
           <Route index element={<ProductList />} />
           <Route path=":productId" element={<AddProduct />} />
+        </Route>
+        <Route path="admin/pickup">
+          <Route index element={<PickupConfirmation />} />
+          <Route path=":userID" element={<AddProduct />} />
         </Route>
       </Routes>
     </div>
