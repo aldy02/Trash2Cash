@@ -21,7 +21,7 @@ const Product = () => {
 
   return (
     <div className='px-10'>
-      <h1 className="font-bold text-2xl pt-6 pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
+      <h1 className="animation3 font-bold text-2xl pt-6 pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
 
       <div className='w-full my-8 grid grid-cols-3 gap-10 px-8'>
         {products.map((product) => (

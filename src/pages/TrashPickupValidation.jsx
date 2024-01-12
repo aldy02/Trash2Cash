@@ -39,16 +39,16 @@ const TrashPickupValidation = () => {
     };
     return (
         <div className='px-10'>
-            <h1 className="font-bold text-2xl pt-6 pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
-            <iframe className='h-64 w-full'
+            <h1 className="animation3 font-bold text-2xl pt-6 pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
+            <iframe className='animation1 h-64 w-full'
                 title="Current Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.8444981505824!2d116.83418621432783!3d-1.2622993359491928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323623e18f13e041%3A0x1d9ef4cdef6da70e!2sBSB%20Mall!5e0!3m2!1sen!2sid!4v1643288365965!5m2!1sen!2sid"
                 allowFullScreen
             ></iframe>
 
             {/* Stepper Started */}
-            <div className='my-6'>
-                <Stepper index={activeStep} colorScheme='teal'>
+            <div className='my-6 animation3'>
+                <Stepper className='animation3' index={activeStep} colorScheme='teal'>
                     {steps.map((step, index) => (
                         <Step key={index}>
                             <StepIndicator>
@@ -75,7 +75,7 @@ const TrashPickupValidation = () => {
 
                 <div className='mt-[58px] grid grid-cols-2 gap-6'>
                     {/* Image */}
-                    <div className='image-container'>
+                    <div className='image-container animation3'>
                         {/* Upload */}
                         <div className='flex items-center justify-center w-full'>
                             <label
@@ -109,7 +109,7 @@ const TrashPickupValidation = () => {
                     </div>
 
                     {/* Detail */}
-                    <div className='detail-container'>
+                    <div className='detail-container animation1'>
                         <Select placeholder='Choose Trash Type' focusBorderColor='green.500' size='md'>
                             <option value='option1'>Option 1</option>
                             <option value='option2'>Option 2</option>
@@ -130,7 +130,7 @@ const TrashPickupValidation = () => {
                     </div>
                 </div>
                 <Link to={`/pickup/${bankId}/confirmation`}>
-                    <button className='bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10'>
+                    <button className='animation4 bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10'>
                         CONFIRM
                     </button>
                 </Link>

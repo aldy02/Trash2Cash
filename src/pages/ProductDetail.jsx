@@ -34,7 +34,7 @@ const ProductDetail = () => {
   return (
     <div className='px-10'>
       <div className='grid grid-cols-3 gap-6 mt-8'>
-        <div className='w-full flex justify-center flex-col items-center'>
+        <div className='animation6 w-full flex justify-center flex-col items-center'>
           <img className='rounded-2xl' src={data.image} alt="Product Image" />
           <div className='flex mt-3 w-3/4 justify-center items-center'>
             <div>
@@ -49,7 +49,7 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        <div className='ml-1 p-2 w-full'>
+        <div className='animation5 ml-1 p-2 w-full'>
           <h2 className='text-2xl font-bold text-[#263238]'>{data.title}</h2>
           <p className='my-4 text-[#7B7B7B]'>{data.total_sold} sold</p>
           <h1 className='text-3xl font-bold text-[#263238]'>Rp {data.price}0</h1>
@@ -83,7 +83,7 @@ const ProductDetail = () => {
           <hr className="border-t-1 border-[#bdbdbd] mt-5" />
         </div>
 
-        <div className='h-[90%] border border-[#bdbdbd] rounded-3xl flex flex-col'>
+        <div className='animation6 h-[90%] border border-[#bdbdbd] rounded-3xl flex flex-col'>
           <div className='border-b border-[#bdbdbd] flex items-center px-6 py-5'>
             <div className='w-[72px] h-[72px] bg-gray-300 rounded-full'></div>
             <div className='ml-3'>
@@ -133,7 +133,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <div className='p-8 bg-gray-100 my-9 rounded-xl'>
+      <div className='animation3 p-8 bg-gray-100 my-9 rounded-xl'>
         <p className='font-medium'>Description:</p>
         <p>Sebuah gelang yang dibuat dari sisa sampah metal yang telah diolah sedemikian rupa sehingga menjadi
           aksesoris yang cocok dipakai dimana saja serta nyaman digunakan.</p>

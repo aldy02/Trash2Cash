@@ -1,7 +1,7 @@
 const ProductCard = ({ image, title, sold, price }) => {
 
     return (
-        <div className="w-full py-8 px-6 rounded-xl bg-[#f3f2f2] hover:bg-[#ebe8e8]">
+        <div className="animation2 w-full py-8 px-6 rounded-xl bg-[#f3f2f2] hover:bg-[#ebe8e8]">
             <div>
                 <img className="rounded-md" src={image} alt="Product Photo" />
                 <h1 className="font-bold text-xl mt-4 mb-1">{title}</h1>
