@@ -38,12 +38,12 @@ const AddProduct = () => {
     };
     return (
         <div className='px-10'>
-            <h1 className="font-bold text-2xl pt-6 pb-4">Product Information</h1>
+            <h1 className="animation3 font-bold text-2xl pt-6 pb-4">Product Information</h1>
 
             <div className=' px-8'>
                 <div className='mt-4 grid grid-cols-2 gap-6'>
                     {/* Image */}
-                    <div className='image-container'>
+                    <div className='animation6 image-container'>
                         {/* Upload */}
                         <div className='flex items-center justify-center w-full'>
                             <label
@@ -77,7 +77,7 @@ const AddProduct = () => {
                     </div>
 
                     {/* Detail */}
-                    <div className='detail-container'>
+                    <div className='animation5 detail-container'>
                         <Select placeholder='Choose Trash Type' focusBorderColor='green.500' size='md'>
                             <option value='option1'>Option 1</option>
                             <option value='option2'>Option 2</option>
@@ -116,7 +116,7 @@ const AddProduct = () => {
                         </div>
                     </div>
                 </div>
-                <button onClick={handleConfirmClick} className='bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10'>
+                <button onClick={handleConfirmClick} className='animation2 bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10'>
                     CONFIRM
                 </button>
             </div>

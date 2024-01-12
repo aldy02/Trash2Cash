@@ -8,9 +8,9 @@ const PickupConfirmation = () => {
 
     return (
         <div className="px-10">
-            <h1 className="font-bold text-[#455A64] text-4xl pt-8 pb-4">Product List</h1>
+            <h1 className="animation2 font-bold text-[#455A64] text-4xl pt-8 pb-4">Product List</h1>
 
-            <div className='w-full my-3'>
+            <div className='animation1 w-full my-3'>
                 <div className="relative w-full">
                     <input
                         type="text"
@@ -35,7 +35,7 @@ const PickupConfirmation = () => {
                 </div>
             </div>
 
-            <div className='confirmation-request-container grid grid-cols-2 gap-9 my-10 px-6'>
+            <div className='animation3 confirmation-request-container grid grid-cols-2 gap-9 my-10 px-6'>
                 {/* Item1 */}
                 <div className='bg-gray-50 hover:bg-gray-100 px-6 py-7 shadow-md rounded-md'>
                     <div className='flex'>

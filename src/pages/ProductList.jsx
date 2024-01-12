@@ -21,9 +21,9 @@ const ProductList = () => {
 
     return (
         <div className='px-10'>
-            <h1 className="font-bold text-[#455A64] text-4xl pt-8 pb-4">Product List</h1>
+            <h1 className="animation2 font-bold text-[#455A64] text-4xl pt-8 pb-4">Product List</h1>
 
-            <div className='flex items-center justify-center w-full my-3'>
+            <div className='animation1 flex items-center justify-center w-full my-3'>
                 <div className="relative w-full">
                     <input
                         type="text"

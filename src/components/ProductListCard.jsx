@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ image, title, price, stock, id }) => {
 
     return (
-        <div className='card-container bg-gray-50 hover:bg-gray-100 px-6 py-7 shadow-md rounded-md'>
+        <div className='animation4 card-container bg-gray-50 hover:bg-gray-100 px-6 py-7 shadow-md rounded-md'>
             <div className="flex">
                 <div className="w-36 mr-8">
                     <img className="rounded-xl" src={image} alt="Product Photo" />
