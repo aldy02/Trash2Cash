@@ -8,7 +8,7 @@ const PickupConfirmation = () => {
 
     return (
         <div className="px-10">
-            <h1 className="animation2 font-bold text-[#455A64] text-4xl pt-8 pb-4">Product List</h1>
+            <h1 className="animation2 font-bold text-[#455A64] text-4xl pt-8 pb-4">Pickup Conformation List</h1>
 
             <div className='animation1 w-full my-3'>
                 <div className="relative w-full">
