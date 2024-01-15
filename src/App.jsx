@@ -12,6 +12,7 @@ import AddProduct from './pages/AddProduct'
 import ProductList from './pages/ProductList'
 import PickupConfirmation from './pages/PickupConfirmation'
 import NotFound from './pages/NotFound'
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -24,21 +25,39 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="pickup">
-          <Route index element={<TrashPickup />} />
-          <Route path=":bankId" element={<TrashPickupValidation />} />
-          <Route path=":bankId/confirmation" element={<TrashPickupConfirmation />} />
+          <Route index element={<ProtectedRoute>
+            <TrashPickup />
+          </ProtectedRoute>} />
+          <Route path=":bankId" element={<ProtectedRoute>
+            <TrashPickupValidation />
+          </ProtectedRoute>} />
+          <Route path=":bankId/confirmation" element={<ProtectedRoute>
+            <TrashPickupConfirmation />
+          </ProtectedRoute>} />
         </Route>
         <Route path="product">
-          <Route index element={<Product />} />
-          <Route path=":productId" element={<ProductDetail />} />
+          <Route index element={<ProtectedRoute>
+            <Product />
+          </ProtectedRoute>} />
+          <Route path=":productId" element={<ProtectedRoute>
+            <ProductDetail />
+          </ProtectedRoute>} />
         </Route>
         <Route path="admin/product">
-          <Route index element={<ProductList />} />
-          <Route path=":productId" element={<AddProduct />} />
+          <Route index element={<ProtectedRoute>
+            <ProductList />
+          </ProtectedRoute>} />
+          <Route path=":productId" element={<ProtectedRoute>
+            <AddProduct />
+          </ProtectedRoute>} />
         </Route>
         <Route path="admin/pickup">
-          <Route index element={<PickupConfirmation />} />
-          <Route path=":userID" element={<AddProduct />} />
+          <Route index element={<ProtectedRoute>
+            <PickupConfirmation />
+          </ProtectedRoute>} />
+          <Route path=":userID" element={<ProtectedRoute>
+            <AddProduct />
+          </ProtectedRoute>} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
