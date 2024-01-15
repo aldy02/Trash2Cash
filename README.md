@@ -1,4 +1,4 @@
-# Team Inspire - Hacfest 2024 Participant
+# Team Inspire - Hackfest 2024 Participant
 1. Aldy Rahman - Hacker
 2. Rama Noor Rizki - Hacker
 3. Rifky Fauzan Rusadi - Hustler
