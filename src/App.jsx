@@ -11,6 +11,7 @@ import ProductDetail from './pages/ProductDetail'
 import AddProduct from './pages/AddProduct'
 import ProductList from './pages/ProductList'
 import PickupConfirmation from './pages/PickupConfirmation'
+import NotFound from './pages/NotFound'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route index element={<PickupConfirmation />} />
           <Route path=":userID" element={<AddProduct />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
