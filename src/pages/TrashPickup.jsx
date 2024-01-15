@@ -43,16 +43,16 @@ const TrashPickup = () => {
 
   return (
     <div>
-      <div className="px-7 xl:px-10">
-        <h1 className="animation2 font-semibold text-base py-6 xl:font-bold xl:text-2xl xl:pt-6 xl:pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
-        <iframe className='animation2  w-full h-48 xl:h-64'
+      <div className="px-7 lg:px-10">
+        <h1 className="animation2 font-semibold text-base md:text-lg py-6 lg:font-bold lg:text-2xl lg:pt-6 lg:pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
+        <iframe className='animation2  w-full h-48 md:h-52 lg:h-64'
           title="Current Location"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.8444981505824!2d116.83418621432783!3d-1.2622993359491928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323623e18f13e041%3A0x1d9ef4cdef6da70e!2sBSB%20Mall!5e0!3m2!1sen!2sid!4v1643288365965!5m2!1sen!2sid"
           allowFullScreen
         ></iframe>
 
         {/* Stepper Started */}
-        <div className='hidden xl:visible xl:my-6 animation2'>
+        <div className='hidden lg:block lg:my-6 animation2'>
           <Stepper className='animation2' index={activeStep} colorScheme='teal'>
             {steps.map((step, index) => (
               <Step key={index}>
@@ -76,7 +76,7 @@ const TrashPickup = () => {
         {/* Stepper End */}
 
         {/* Input Search */}
-        <div className='animation2  w-full flex items-center justify-center flex-col mt-9 xl:mt-[58px]'>
+        <div className='animation2  w-full flex items-center justify-center flex-col mt-9 lg:mt-7 xl:mt-[58px]'>
           <div className="relative w-full xl:w-2/3">
             <input
               type="text"
@@ -108,7 +108,7 @@ const TrashPickup = () => {
         </div>
 
         {/* Bank List Started */}
-        <div className='w-full grid xl:grid-cols-3 grid-cols-1 gap-y-6 xl:gap-y-8 xl:gap-x-9 mt-9 xl:mt-16'>
+        <div className='w-full grid xl:grid-cols-3 grid-cols-1 md:grid-cols-2 md:gap-6 gap-y-6 xl:gap-y-8 xl:gap-x-9 mt-9 xl:mt-16'>
           {trashBankDatas.map((trashBankData) => (
             <BankCard key={trashBankData.id}
               bankName={trashBankData.title}
