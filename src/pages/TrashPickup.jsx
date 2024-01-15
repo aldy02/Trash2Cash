@@ -81,7 +81,7 @@ const TrashPickup = () => {
             <input
               type="text"
               placeholder="Choose your nearest trash bank"
-              className='text-sm xl:text-base w-full py-2 pl-9 xl:pl-11 pr-5 rounded-full border-[1px] xl:border-2 border-gray-500'
+              className='text-sm xl:text-base w-full py-2 pl-9 xl:pl-11 pr-5 rounded-full border-[1px] xl:border-2 border-gray-400'
             />
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <svg

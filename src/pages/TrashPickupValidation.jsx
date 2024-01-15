@@ -71,9 +71,9 @@ const TrashPickupValidation = () => {
             {/* Stepper End */}
 
             {/* Validation Section */}
-            <div className=' px-8'>
+            <div className='lg:px-8'>
 
-                <div className='mt-[58px] grid grid-cols-2 gap-6'>
+                <div className='mt-8 lg:mt-[58px] grid md:grid-cols-2 gap-6'>
                     {/* Image */}
                     <div className='image-container animation3'>
                         {/* Upload */}
@@ -119,10 +119,10 @@ const TrashPickupValidation = () => {
                         </Select>
                         <textarea
                             rows="4"
-                            className=" my-4 border-2 border-[#7B7B7B] rounded-lg block w-full p-2.5 resize-none h-32"
+                            className=" my-4 border-2 border-[#7B7B7B] lg:text-base text-sm rounded-lg block w-full p-2.5 resize-none h-32"
                             placeholder='Trash description'
                         ></textarea>
-                        <p className='w-full text-justify text-sm'>lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem
+                        <p className='w-full text-justify text-xs lg:text-sm'>lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem
                             ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum
                             dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor
                             sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit amet
@@ -130,7 +130,7 @@ const TrashPickupValidation = () => {
                     </div>
                 </div>
                 <Link to={`/pickup/${bankId}/confirmation`}>
-                    <button className='animation4 bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-semibold rounded-lg text-lg my-10'>
+                    <button className='animation4 bg-[#FFB534] hover:bg-[#EFA42B] py-2 w-full text-[#FBF6EE] font-medium md:font-semibold rounded-lg text-lg my-10'>
                         CONFIRM
                     </button>
                 </Link>
