@@ -21,9 +21,9 @@ const Product = () => {
 
   return (
     <div className='px-10'>
-      <h1 className="animation3 font-bold text-2xl pt-6 pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
+      <h1 className="animation1 font-semibold text-base sm:text-lg py-6 sm:font-bold lg:text-2xl lg:pt-6 lg:pb-4">Mari Mengolah Sampah Menjadi Cuan Bersama Kami</h1>
 
-      <div className='w-full my-8 grid grid-cols-3 gap-10 px-8'>
+      <div className='w-full mt-2 mb-8 lg:my-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 lg:gap-7 lg:px-8'>
         {products.map((product) => (
           <Link to={`/product/${product.id}`}>
             <ProductCard key={product.id}
