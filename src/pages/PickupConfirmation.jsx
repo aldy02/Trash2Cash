@@ -7,8 +7,8 @@ const PickupConfirmation = () => {
     };
 
     return (
-        <div className="px-10">
-            <h1 className="animation2 font-bold text-[#455A64] text-4xl pt-8 pb-4">Pickup Conformation List</h1>
+        <div className="lg:px-10 px-8">
+            <h1 className="animation2 font-bold text-[#455A64] text-[26px] lg:text-4xl pt-6 lg:pt-8 lg:pb-4">Pickup Conformation List</h1>
 
             <div className='animation1 w-full my-3'>
                 <div className="relative w-full">
@@ -35,7 +35,7 @@ const PickupConfirmation = () => {
                 </div>
             </div>
 
-            <div className='animation3 confirmation-request-container grid grid-cols-2 gap-9 my-10 px-6'>
+            <div className='animation3 grid md:grid-cols-2 gap-9 my-10 px-6 justify-center'>
                 {/* Item1 */}
                 <div className='bg-gray-50 hover:bg-gray-100 px-6 py-7 shadow-md rounded-md'>
                     <div className='flex'>
@@ -43,9 +43,9 @@ const PickupConfirmation = () => {
                             <p>Photo Here</p>
                         </div>
                         <div className='detail flex flex-col justify-center'>
-                            <h2 className='font-bold text-[#263238] text-[26px]'>Aldy Rahman</h2>
+                            <h2 className='font-bold text-[#263238] text-xl lg:text-[26px]'>Aldy Rahman</h2>
                             <hr className="border-t-1 border-[#bdbdbd] my-3" />
-                            <div className='flex'>
+                            <div className='flex text-sm lg:text-base'>
                                 <div className='mr-6'>
                                     <p className='text-[#7B7B7B]'>Customer Location</p>
                                     <p className='text-[#181818] font-medium'>Jl. Dahlina Raya 2</p>
