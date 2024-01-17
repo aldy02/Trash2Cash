@@ -72,15 +72,14 @@ const Navigation = () => {
           className="w-5 ml-3 lg:w-7 lg:ml-5"
         />
         <span className="border-l-2 border-[#DEDEDE] h-6 mx-3 lg:mx-5 lg:border-l-[3px] lg:h-8"></span>
-        <div className="relative group">
+        <div className="relative group flex" onClick={handleProfileClick}>
           <img
             className="w-6 lg:w-8 cursor-pointer"
             src={ProfiileIcon}
             alt="Profile Icon"
-            onClick={handleProfileClick}
           />
           {showProfileDropdown && (
-            <div className="absolute right-0 mt-2 bg-white border border-gray-300 rounded shadow-md">
+            <div className="absolute -right-2 mt-10 bg-white border border-gray-300 rounded shadow-md">
               <button
                 className="block px-4 w-24 bg-red-500 text-white font-semibold py-2 text-sm hover:bg-red-700 text-left"
                 onClick={handleSignOut}
@@ -89,12 +88,17 @@ const Navigation = () => {
               </button>
             </div>
           )}
+          <img
+            src={ArrowIcon}
+            alt="Arrow Icon"
+            className="ml-1 mr-2 w-4 lg:ml-2 lg:w-6"
+          />
         </div>
-        <img
+        {/* <img
           src={ArrowIcon}
           alt="Arrow Icon"
           className="ml-1 mr-2 w-4 lg:ml-2 lg:w-6"
-        />
+        /> */}
         <HamburgerMenu />
       </div>
     </div>
