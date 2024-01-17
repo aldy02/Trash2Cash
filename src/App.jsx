@@ -17,12 +17,10 @@ import ProtectedRoute from './components/ProtectedRoute';
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
-      </Routes>
-      <Navigation />
-      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="pickup">
           <Route index element={<ProtectedRoute>

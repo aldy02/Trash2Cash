@@ -5,8 +5,19 @@ import CartIcon from '../assets/CartIcon.svg'
 import NotificationIcon from '../assets/NotificationIcon.svg'
 import { Link } from "react-router-dom";
 import HamburgerMenu from './HumbergerMenu'
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Navigation = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const isAuthRoute = () => {
+        return location.pathname === '/sign-in' || location.pathname === '/sign-up';
+      };
+
+      if (isAuthRoute()) {
+        return null;
+      }
     return (
         <div className=" navbar flex flex-row justify-between px-6 lg:px-8 py-2 border-b-2 border[#B0BEC5]">
             <div className='flex flex-row items-center'>
