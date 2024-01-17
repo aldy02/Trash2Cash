@@ -1,9 +1,7 @@
-import HomePageHero from '../assets/HomePageHero.svg';
 import { useNavigate } from 'react-router-dom';
 import useAuthStatus from '../hooks/useAuthStatus';
 import { useEffect } from 'react';
-import { Button } from '@chakra-ui/react';
-import { getAuth, signOut } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
 import { app } from '../config/firebase';
 import Coins from '../assets/Coins.svg'
 import {
@@ -27,15 +25,6 @@ const Home = () => {
       navigate('/sign-in');
     }
   }, [isSignedIn, navigate]);
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate('/sign-in');
-    } catch (error) {
-      console.error('Error during logout:', error);
-    }
-  };
 
   return (
     <>
