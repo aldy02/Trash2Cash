@@ -20,11 +20,11 @@ const ProductList = () => {
     }, []);
 
     return (
-        <div className='px-10'>
-            <h1 className="animation2 font-bold text-[#455A64] text-4xl pt-8 pb-4">Product List</h1>
+        <div className='lg:px-10 px-6'>
+            <h1 className="animation2 font-bold text-[#455A64] text-[26px] lg:text-4xl pt-6 lg:pt-8 lg:pb-4">Product List</h1>
 
             <div className='animation1 flex items-center justify-center w-full my-3'>
-                <div className="relative w-full">
+                <div className="relative w-full text-sm lg:text-base">
                     <input
                         type="text"
                         placeholder="Search Product"
@@ -46,17 +46,17 @@ const ProductList = () => {
                         </svg>
                     </div>
                 </div>
-                <Link to={`/admin/product/id`} className='w-1/3'>
-                    <div className='rounded-2xl bg-[#FFB534] hover:bg-[#EFA42B] text-white font-semibold flex py-[10px] ml-3 justify-center items-center'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <Link to={`/admin/product/id`} className='lg:w-1/3 w-[50%]'>
+                    <div className='rounded-2xl bg-[#FFB534] hover:bg-[#EFA42B] text-white font-medium lg:font-semibold lg:px-0 px-3 flex py-[10px] text-sm lg:text-base ml-2 lg:ml-3 justify-center items-center'>
+                        <svg className='hidden md:block' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                             <path d="M20 13H13V20H11V13H4V11H11V4H13V11H20V13Z" fill="white" />
                         </svg>
-                        <p className='ml-4'>ADD PRODUCT</p>
+                        <p className='lg:ml-4 ml-1'>ADD PRODUCT</p>
                     </div>
                 </Link>
             </div>
 
-            <div className='mt-[50px] grid grid-cols-2 gap-9 px-6'>
+            <div className='mt-[50px] grid lg:grid-cols-2 grid-cols-1 gap-9 lg:px-6'>
                 {products.map((product) => (
                     <ProductListCard key={product.id}
                         image={product.image}
