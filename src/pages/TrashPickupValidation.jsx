@@ -111,21 +111,15 @@ const TrashPickupValidation = () => {
                     {/* Detail */}
                     <div className='detail-container animation1'>
                         <Select placeholder='Choose Trash Type' focusBorderColor='green.500' size='md'>
-                            <option value='option1'>Option 1</option>
-                            <option value='option2'>Option 2</option>
-                            <option value='option3'>Option 3</option>
-                            <option value='option4'>Option 4</option>
-                            <option value='option5'>Option 5</option>
+                            <option value='option1'>organik</option>
+                            <option value='option2'>non-organik</option>
                         </Select>
                         <textarea
                             rows="4"
                             className=" my-4 border-2 border-[#7B7B7B] lg:text-base text-sm rounded-lg block w-full p-2.5 resize-none h-32"
                             placeholder='Trash description'
                         ></textarea>
-                        <p className='w-full text-justify text-xs lg:text-sm'>lorem ipsum dolor sit amet lorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem
-                            ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum
-                            dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor
-                            sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit ametlorem ipsum dolor sit amet
+                        <p className='w-full text-justify text-xs lg:text-sm'>
                         </p>
                     </div>
                 </div>
