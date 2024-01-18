@@ -1,8 +1,13 @@
+# Team Inspire - Trash2Cash Web Application
+
+![Team Inspire Logo](inspire-logo.png)
+
 # Team Inspire - Hackfest 2024 Participant
 1. Aldy Rahman - Hacker
 2. Rama Noor Rizki - Hacker
 3. Rifky Fauzan Rusadi - Hustler
 4. M. Alfi Rizki - Hipster
+
 
 # Trash2Cash Web Application
 
