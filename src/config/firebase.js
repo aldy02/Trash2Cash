@@ -5,7 +5,7 @@ import { getAnalytics } from 'firebase/analytics';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyD6T8k8q425BTFz0_huVs5gY__BKeICBtQ',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: 'trash2cash-ebb4a.firebaseapp.com',
   projectId: 'trash2cash-ebb4a',
   storageBucket: 'trash2cash-ebb4a.appspot.com',
