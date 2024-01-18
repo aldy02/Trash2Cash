@@ -35,16 +35,26 @@ const TrashPickupConfirmation = () => {
 
 
     const [currentStep, setCurrentStep] = useState(1);
-
-    const handleStepClick = (index) => {
-        setCurrentStep(index + 1);
-    };
-    const { activeStep } = useSteps({
-        index: currentStep,
-        count: stepsConfirmation.length,
-    })
-
     const [note, setNote] = useState('');
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentStep((prevStep) => (prevStep % stepsConfirmation.length) + 1);
+        }, 3000);
+    
+        return () => {
+          clearInterval(interval);
+        };
+      }, []);
+
+    // const handleStepClick = (index) => {
+    //     setCurrentStep(index + 1);
+    // };
+    // const { activeStep } = useSteps({
+    //     index: currentStep,
+    //     count: stepsConfirmation.length,
+    // })
+
 
     useEffect(() => {
         switch (currentStep) {
@@ -119,10 +129,10 @@ const TrashPickupConfirmation = () => {
                         ))}
                     </Stepper>
                 </div>
-                <div className='hidden md:block'>
+                <div className='hidden md:block stepper2'>
                     <Stepper index={currentStep} colorScheme='teal'>
                         {stepsConfirmation.map((step, index) => (
-                            <Step key={index} onClick={() => handleStepClick(index)}>
+                            <Step key={index} onClick={() => handleStepClick(index + 1)}>
                                 <StepIndicator>
                                     <StepStatus
                                         complete={<StepIcon />}
