@@ -10,7 +10,7 @@ import {
   useSteps,
   Box
 } from '@chakra-ui/react'
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import BankCard from '../components/BankCard';
 
@@ -30,8 +30,9 @@ const TrashPickup = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://659cb07f633f9aee7907cf7e.mockapi.io/trash-2-cash/api/bank-sampah');
-        setTrashBankDatas(response.data);
+        const response = await axios.get('http://localhost:2000/waste-banks');
+        setTrashBankDatas(response.data.data);
+        console.info(trashBankDatas);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -39,7 +40,6 @@ const TrashPickup = () => {
     fetchData();
   }, []);
 
-  console.log(trashBankDatas);
 
   return (
     <div>
