@@ -13,6 +13,30 @@
 
 Trash2Cash is a web-based application with the main feature of PickUp Trash where we provide waste collection services to users. In accordance with our motto "Turn Trash to Cash", we hope to reduce waste by buying waste sold by users.
 
+
+## Instalation
+
+1. Clone this repository to your local machine:
+
+   ```bash
+   git clone https://github.com/aldy02/Trash2Cash
+
+2. Install package:
+
+   ```bash
+   npm install
+
+3. Copy and fill environtment variable:
+
+   ```bash
+   cp .env.development .env
+
+4. Serve your project to localhost:
+
+   ```bash
+   npm run dev
+
+
 Route Page:
 
 ### Sign-Up: `/sign-up`
