@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
-const BankCard = ({ bankName, openHour, closeHour, distance, bankId }) => {
+const BankCard = ({ bankName, openHour, closeHour, distance, bankId, bankAddress }) => {
     const currentTime = new Date();
 
     const openHourArray = openHour.split(':');
@@ -21,16 +21,14 @@ const BankCard = ({ bankName, openHour, closeHour, distance, bankId }) => {
 
     return (
         <div
-            className={`relative w-[450px] animation2  ${isBankOpen ? 'bg-[#f8f7f7] border-[3px] border-[#f8f7f7]' : 'bg-[#f0efef] border-2 lg:border-[3px] border-[#f0efef]'} p-8 w-full rounded-2xl hover:border-[3px] hover:border-[#FFB534]`} onMouseEnter={() => setButtonVisibility(true)} onMouseLeave={() => setButtonVisibility(false)}>
-            <h2 className='text-base lg:text-xl font-semibold mb-1'>{bankName}</h2>
+            className={`relative w-[450px] h-[250px]  animation2  ${isBankOpen ? 'bg-[#f8f7f7] border-[3px] border-[#f8f7f7]' : 'bg-[#f0efef] border-2 lg:border-[3px] border-[#f0efef]'} p-8 w-full rounded-2xl hover:border-[3px] hover:border-[#FFB534]`} onMouseEnter={() => setButtonVisibility(true)} onMouseLeave={() => setButtonVisibility(false)}>
+            <h2 className='text-base lg:text-xl overflow-y-hidden h-[29px] font-semibold mb-1'>{bankName}</h2>
             <span className={`rounded-sm mr-2 px-2 ${isBankOpen ? 'bg-[#DCFFDC] text-[#65B741]' : 'bg-[#FFD4D4] text-[#FF5252]'} lg:text-xs text-[10px] font-medium py-1`}>
                 {isBankOpen ? 'Open' : 'Close'}
             </span>
             <span className={`rounded-sm text-[10px] lg:text-xs px-2 ${isBankOpen ? 'bg-[#DCFFDC] text-[#65B741]' : 'bg-[#FFD4D4] text-[#FF5252]'} font-medium py-1`}>{openHour} - {closeHour} WITA</span>
-            <p className='mt-3 text-xs lg:text-sm text-justify'>
-                <strong className='font-medium'>{distance} m</strong> - Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec id tincidunt velit, fermentum dapibus sem. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-                per inceptos himenaeos.
+            <p className='mt-3 h-[60px] overflow-y-hidden text-xs lg:text-sm text-justify'>
+                <strong className='font-medium'>{distance} m</strong> {bankAddress}
             </p>
             {isButtonVisible && (
                 <Link to={`/pickup/${bankId}`}>

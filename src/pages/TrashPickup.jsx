@@ -25,12 +25,11 @@ const TrashPickup = () => {
     index: 1,
     count: steps.length,
   })
-
   const [trashBankDatas, setTrashBankDatas] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:2000/waste-banks');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/waste-banks`);
         setTrashBankDatas(response.data.data);
         console.info(trashBankDatas);
       } catch (error) {
@@ -114,8 +113,9 @@ const TrashPickup = () => {
               bankName={trashBankData.title}
               openHour={trashBankData.open_hour}
               closeHour={trashBankData.close_hour}
-              distance={trashBankData.distance}
+              distance={300}
               bankId={trashBankData.id}
+              bankAddress={trashBankData.address}
             />
           ))}
         </div>
